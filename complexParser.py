@@ -3,12 +3,12 @@ from complex import Complex
 import math
 import re
 
-def parseComplex(fx):
-    return evalComplex(fx, 0)
+def parse(fx):
+    return eval(fx, 0)
     
 
 # fx(xi) or f(x,y,z,...) where xi is a var dictionary 
-def evalComplex(fx, xi):
+def eval(fx, xi):
     fx = fx.strip().lower().replace(" ","")
 
 
@@ -28,7 +28,7 @@ def evalComplex(fx, xi):
             if hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.mul(Complex(float(numb),0), evalComplex(new_fx, xi))
+                value = Complex.mul(Complex(float(numb),0), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
@@ -36,19 +36,19 @@ def evalComplex(fx, xi):
             elif hasNumber == True and isImaginary == True:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.mul(Complex(0, float(numb)),evalComplex(new_fx, xi))
+                value = Complex.mul(Complex(0, float(numb)),eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.mul(evalComplex(function, xi), evalComplex(new_fx, xi))
+                value = Complex.mul(eval(function, xi), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.mul(value, evalComplex(new_fx, xi))
+                value = Complex.mul(value, eval(new_fx, xi))
                 i = i + len(new_fx)
          
          
@@ -57,7 +57,7 @@ def evalComplex(fx, xi):
             if hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.add(Complex(float(numb), 0),evalComplex(new_fx, xi))
+                value = Complex.add(Complex(float(numb), 0),eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
@@ -65,19 +65,19 @@ def evalComplex(fx, xi):
             elif hasNumber == True and isImaginary == True:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.add(Complex(0, float(numb)), evalComplex(new_fx, xi))
+                value = Complex.add(Complex(0, float(numb)), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""    
             elif hasFunction == True:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.add(evalComplex(function, xi), evalComplex(new_fx, xi))               
+                value = Complex.add(eval(function, xi), eval(new_fx, xi))               
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.add(value,evalComplex(new_fx, xi))
+                value = Complex.add(value,eval(new_fx, xi))
                 i = i + len(new_fx)
                 
                    
@@ -86,7 +86,7 @@ def evalComplex(fx, xi):
             if hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.sub(Complex(float(numb), 0), evalComplex(new_fx, xi))
+                value = Complex.sub(Complex(float(numb), 0), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
@@ -94,20 +94,20 @@ def evalComplex(fx, xi):
             elif hasNumber == True and isImaginary == True:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.sub(Complex(0, float(numb)), evalComplex(new_fx, xi))
+                value = Complex.sub(Complex(0, float(numb)), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
                 
             elif hasFunction == True:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.sub(evalComplex(function, xi), evalComplex(new_fx, xi))
+                value = Complex.sub(eval(function, xi), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = Complex.sub(value, evalComplex(new_fx, xi))
+                value = Complex.sub(value, eval(new_fx, xi))
 
                 i = i + len(new_fx)
                 
@@ -116,7 +116,7 @@ def evalComplex(fx, xi):
             if hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.div(Complex(float(numb), 0), evalComplex(new_fx, xi))
+                value = Complex.div(Complex(float(numb), 0), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
@@ -124,20 +124,20 @@ def evalComplex(fx, xi):
             elif hasNumber == True and isImaginary == True:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.div(Complex(0, float(numb)), evalComplex(new_fx, xi))
+                value = Complex.div(Complex(0, float(numb)), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.div(evalComplex(function, xi), evalComplex(new_fx, xi))
+                value = Complex.div(eval(function, xi), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.div(value, evalComplex(new_fx, xi))
+                value = Complex.div(value, eval(new_fx, xi))
 
                 i = i + len(new_fx)
     
@@ -146,7 +146,7 @@ def evalComplex(fx, xi):
             if hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.rpow(evalComplex(new_fx, xi), float(numb))
+                value = Complex.rpow(eval(new_fx, xi), float(numb))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
@@ -154,20 +154,20 @@ def evalComplex(fx, xi):
             elif hasNumber == True and isImaginary == False:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.pow(evalComplex(new_fx, xi), Complex(0, float(numb)))
+                value = Complex.pow(eval(new_fx, xi), Complex(0, float(numb)))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
                 
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.pow(evalComplex(function, xi), evalComplex(new_fx, xi))
+                value = Complex.pow(eval(function, xi), eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = Complex.pow(value, evalComplex(new_fx, xi))     
+                value = Complex.pow(value, eval(new_fx, xi))     
                 i = i + len(new_fx)
                 
         elif character == '0' or character == '1' or character == '2' or character == '3' or character == '4' or character == '5' or character == '6' or character == '7' or character == '8' or character == '9':
@@ -199,45 +199,45 @@ def evalComplex(fx, xi):
             new_fx = fx[i + 1:nextBracket(fx)]
             if hasFunction==True:
                 if function == "sin":
-                    value = evalComplex(new_fx, xi).__sin__()                        
+                    value = eval(new_fx, xi).__sin__()                        
     
                 elif function == "cos":
-                    value = evalComplex(new_fx, xi).__cos__()
+                    value = eval(new_fx, xi).__cos__()
                     
                 elif function == "tan":
-                    value = evalComplex(new_fx, xi).__tan__()
+                    value = eval(new_fx, xi).__tan__()
                 
                 elif function == "sinh":
-                    value = evalComplex(new_fx, xi).__sinh__()
+                    value = eval(new_fx, xi).__sinh__()
                 
                 elif function == "cosh":
-                    value = evalComplex(new_fx, xi).__cosh__()
+                    value = eval(new_fx, xi).__cosh__()
     
                 elif function == "tanh":
-                    value = evalComplex(new_fx, xi).__tanh__()
+                    value = eval(new_fx, xi).__tanh__()
     
                 elif function == "asin":
-                    value = evalComplex(new_fx, xi).__asin__()
+                    value = eval(new_fx, xi).__asin__()
                     
                 elif function == "acos":
-                    value = evalComplex(new_fx, xi).__acos__()  
+                    value = eval(new_fx, xi).__acos__()  
                                           
                 elif function == "atan":
-                    value = evalComplex(new_fx, xi).__atan__()
+                    value = eval(new_fx, xi).__atan__()
                 
                 #log10    
                 elif function == "log10":
-                    value = evalComplex(new_fx, xi).__log10__()
+                    value = eval(new_fx, xi).__log10__()
                 
                 #log
                 elif function == "log":
-                    value = evalComplex(new_fx, xi).__log__()
+                    value = eval(new_fx, xi).__log__()
                     
                 elif function == "sqrt":                    
-                    value = evalComplex(new_fx, xi).__sqrt__()
+                    value = eval(new_fx, xi).__sqrt__()
                     
                 #elif function == "cbrt":
-                #    value = math.cbrt(float(evalComplex(new_fx, xi)))
+                #    value = math.cbrt(float(eval(new_fx, xi)))
                     
                 else:
                     raise CalculatorException("The function is not well-formed")
@@ -247,7 +247,7 @@ def evalComplex(fx, xi):
                 function = ""
     
             else:
-                value = evalComplex(new_fx, xi)  
+                value = eval(new_fx, xi)  
                               
             i = i + len(new_fx) + 1
     
@@ -289,7 +289,7 @@ def evalComplex(fx, xi):
                         possibleValue = getValue(function, xi)
                         
                         if isinstance(possibleValue, str):
-                            value = evalComplex(possibleValue, xi)
+                            value = eval(possibleValue, xi)
                         else:
                             value = possibleValue
 
@@ -311,7 +311,7 @@ def evalComplex(fx, xi):
                         possibleValue = getValue(function, xi)
                         
                         if isinstance(possibleValue, str):
-                            value = evalComplex(possibleValue, xi)
+                            value = eval(possibleValue, xi)
                         else:
                             value = possibleValue                       
                                               
@@ -345,7 +345,7 @@ def getValue(function, xi):
         elif isinstance(xi, complex):
             value = Complex(xi.real,xi.imag)
         elif isinstance(xi, str):
-            value = evalComplex(xi, xi)
+            value = eval(xi, xi)
         else:
             raise CalculatorException("function is not well defined")
         

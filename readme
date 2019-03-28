@@ -2,44 +2,44 @@ python math expression parser is a python project where you can parse or evaluat
 
 This algorithm does not use a decision tree. It is a recursive algorithm.
 
+Installation
+
+pip install pyMathExpressionParser
+
 Here you can see some examples:
 
-  Real Numbers:
-         
-     f_x=" 1 + acos(0.1)"
-	 
-	 parse(f_x)
-	 
-	 unittest:
-     self.assertEqual(2.470628905633337, parse(f_x))   
-  
-     or 
-   
-     evalXi("(2.35*e^(-3)*x)",2)
-  
-     unittest: 
-     self.assertEqual(0.2339992213289606, evalXi("(2.35*e^(-3)*x)",2))
+  Real Numbers:    
+	
+	from pyMathExpressionParser.realParser import parse
+	from pyMathExpressionParser.realParser import eval
+
+
+	#Real Expresion parser
+	fx="cos(10)"
+	print(parse(fx))
+	xi=5
+	fx = "1 + x"
+	print(eval(fx, xi))
+	
 
   For complex Numbers:
   
-       f_x = "sqrt((1-2i)^3)"        
-       
-	   parseComplex(f_x) --> Result Complex
-	   
-	   parseComplex(f_x).__complex__() --> Result complex
-	   
-	   
-	   unittest: 
-	   self.assertEqual(complex(0.30028310600077657,3.3301906767855614), parseComplex(f_x).__complex__())
+    from pyMathExpressionParser.complexParser import parse
+	from pyMathExpressionParser.complexParser import eval
+	from pyMathExpressionParser.complex import Complex
 
-       f_x = " e^(1*x*y*sin((3/2)^(pi)))"
-	   var={"x":"1+2j", "Y":complex(2,1)}
-      
-	   evalComplex(f_x,var) --> Result Complex
-	   
-	   evalComplex(f_x,var).__complex__() --> Result complex
+	#Operation with complex numbers
+	a = Complex(1,2)
+	print(a.__radd__(10).__complex__())
+	print(Complex.radd(10, a).__complex__())
 
-	   self.assertEqual(complex(-0.5024692307417822,-0.864595091449033), evalComplex(f_x,var).__complex__())
+
+	#Complex Expresion parser
+	fx="cos(10+2j)"
+	print(parse(fx).__complex__())
+	xi=5
+	fx = "1 +j+x"
+	print(eval(fx, xi).__complex__())
       
  There is a full list of examples inside!!
 

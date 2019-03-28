@@ -3,11 +3,11 @@ import math
 import re
 
 def parse(fx):
-    return evalXi(fx, 0)
+    return eval(fx, 0)
     
 
 # fx(xi) or f(x,y,z,...) where xi is a var dictionary 
-def evalXi(fx, xi):
+def eval(fx, xi):
     fx = fx.strip().lower().replace(" ","")
 
     value = 0.0
@@ -25,19 +25,19 @@ def evalXi(fx, xi):
             if hasNumber == True:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(numb) * float(evalXi(new_fx, xi))
+                value = float(numb) * float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(evalXi(function, xi)) * float(evalXi(new_fx, xi))
+                value = float(eval(function, xi)) * float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(value) * float(evalXi(new_fx, xi))
+                value = float(value) * float(eval(new_fx, xi))
                 i = i + len(new_fx)
          
          
@@ -46,19 +46,19 @@ def evalXi(fx, xi):
             if hasNumber == True:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(numb) + float(evalXi(new_fx, xi))
+                value = float(numb) + float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(evalXi(function, xi)) + float(evalXi(new_fx, xi))
+                value = float(eval(function, xi)) + float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(value) + float(evalXi(new_fx, xi))
+                value = float(value) + float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 
                    
@@ -67,57 +67,57 @@ def evalXi(fx, xi):
             if hasNumber == True:
                 numb = number
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(numb) - float(evalXi(new_fx, xi))
+                value = float(numb) - float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(evalXi(function, xi)) - float(evalXi(new_fx, xi))
+                value = float(eval(function, xi)) - float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextMinusFunction(fx[i + 1:len(fx)])
-                value = float(value) - float(evalXi(new_fx, xi))
+                value = float(value) - float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 
         elif character == '/':     
             if hasNumber == True:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(numb) / float(evalXi(new_fx, xi))
+                value = float(numb) / float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(evalXi(function, xi)) / float(evalXi(new_fx, xi))
+                value = float(eval(function, xi)) / float(eval(new_fx, xi))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = float(value) / float(evalXi(new_fx, xi))
+                value = float(value) / float(eval(new_fx, xi))
                 i = i + len(new_fx)
     
         elif character == '^':     
             if hasNumber == True:
                 numb = number
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = math.pow(float(numb), float(evalXi(new_fx, xi)))
+                value = math.pow(float(numb), float(eval(new_fx, xi)))
                 i = i + len(new_fx)
                 hasNumber = False
                 number = ""
             elif hasFunction == True:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = math.pow(float(evalXi(function, xi)),float(evalXi(new_fx, xi)))
+                value = math.pow(float(eval(function, xi)),float(eval(new_fx, xi)))
                 i = i + len(new_fx)
                 hasFunction = False
                 function = ""
             else:
                 new_fx = nextFunction(fx[i + 1:len(fx)])
-                value = math.pow(float(value),float(evalXi(new_fx, xi)))
+                value = math.pow(float(value),float(eval(new_fx, xi)))
                 i = i + len(new_fx)
                 
         elif character == '0' or character == '1' or character == '2' or character == '3' or character == '4' or character == '5' or character == '6' or character == '7' or character == '8' or character == '9':
@@ -149,43 +149,43 @@ def evalXi(fx, xi):
             new_fx = fx[i + 1:nextBracket(fx)]
             if hasFunction==True:
                 if function == "sin":
-                    value = math.sin(float(evalXi(new_fx, xi)))                        
+                    value = math.sin(float(eval(new_fx, xi)))                        
     
                 elif function == "cos":
-                    value = math.cos(float(evalXi(new_fx, xi)))
+                    value = math.cos(float(eval(new_fx, xi)))
                     
                 elif function == "tan":
-                    value = math.tan(float(evalXi(new_fx, xi)))
+                    value = math.tan(float(eval(new_fx, xi)))
                 
                 elif function == "sinh":
-                    value = math.sinh(float(evalXi(new_fx, xi)))
+                    value = math.sinh(float(eval(new_fx, xi)))
                 
                 elif function == "cosh":
-                    value = math.cosh(float(evalXi(new_fx, xi)))
+                    value = math.cosh(float(eval(new_fx, xi)))
     
                 elif function == "tanh":
-                    value = math.tanh(float(evalXi(new_fx, xi)))
+                    value = math.tanh(float(eval(new_fx, xi)))
     
                 elif function == "asin":
-                    value = math.asin(float(evalXi(new_fx, xi)))
+                    value = math.asin(float(eval(new_fx, xi)))
                     
                 elif function == "acos":
-                    value = math.acos(float(evalXi(new_fx, xi)))  
+                    value = math.acos(float(eval(new_fx, xi)))  
                                           
                 elif function == "atan":
-                    value = math.atan(float(evalXi(new_fx, xi)))
+                    value = math.atan(float(eval(new_fx, xi)))
                     
                 elif function == "log":
-                    value = math.log(float(evalXi(new_fx, xi)))
+                    value = math.log(float(eval(new_fx, xi)))
                     
                 elif function == "log10":
-                    value = math.log10(float(evalXi(new_fx, xi)))
+                    value = math.log10(float(eval(new_fx, xi)))
                     
                 elif function == "sqrt":                    
-                    value = math.sqrt(float(evalXi(new_fx, xi)))
+                    value = math.sqrt(float(eval(new_fx, xi)))
                     
                 #elif function == "cbrt":
-                #    value = math.cbrt(float(evalXi(new_fx, xi)))
+                #    value = math.cbrt(float(eval(new_fx, xi)))
                     
                 else:
                     raise CalculatorException("The function is not well-formed")
@@ -195,7 +195,7 @@ def evalXi(fx, xi):
                 function = ""
     
             else:
-                value = evalXi(new_fx, xi)  
+                value = eval(new_fx, xi)  
                               
             i = i + len(new_fx) + 1
     
@@ -222,7 +222,7 @@ def evalXi(fx, xi):
                         possibleValue = getValue(function, xi)
                         
                         if isinstance(possibleValue, str):
-                            value = evalXi(possibleValue, xi)
+                            value = eval(possibleValue, xi)
                         else:
                             value = possibleValue
                         
@@ -254,7 +254,7 @@ def getValue(function, xi):
         elif isinstance(xi, float):
             value = xi
         elif isinstance(xi, str):
-            value = evalXi(xi, xi)
+            value = eval(xi, xi)
         else:
             raise CalculatorException("function is not well defined")
         
