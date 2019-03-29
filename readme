@@ -4,14 +4,14 @@ This algorithm does not use a decision tree. It is a recursive algorithm.
 
 Installation
 
-pip install pyMathExpressionParser
+pip install pymep
 
 Here you can see some examples:
 
   Real Numbers:    
 	
-	from pyMathExpressionParser.realParser import parse
-	from pyMathExpressionParser.realParser import eval
+	from pymep.realParser import parse
+	from pymep.realParser import eval
 
 
 	#Real Expresion parser
@@ -24,9 +24,9 @@ Here you can see some examples:
 
   For complex Numbers:
   
-    from pyMathExpressionParser.complexParser import parse
-	from pyMathExpressionParser.complexParser import eval
-	from pyMathExpressionParser.complex import Complex
+    from pymep.complexParser import parse
+	from pymep.complexParser import eval
+	from pymep.complex import Complex
 
 	#Operation with complex numbers
 	a = Complex(1,2)
