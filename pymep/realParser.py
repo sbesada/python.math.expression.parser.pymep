@@ -1,4 +1,6 @@
-from exception import CalculatorException
+from __future__ import absolute_import
+
+from .exception import CalculatorException
 import math
 import re
 
