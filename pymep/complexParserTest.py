@@ -1,7 +1,9 @@
+from __future__ import absolute_import
+
 import unittest
-from complex import Complex
-from complexParser import eval
-from complexParser import parse
+from .complex import Complex
+from .complexParser import eval
+from .complexParser import parse
 
 
 class functionXTest(unittest.TestCase):

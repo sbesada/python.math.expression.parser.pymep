@@ -1,5 +1,9 @@
+from __future__ import absolute_import
+
 import unittest
-from complex import Complex
+from .complex import Complex
+
+
 class ComplextTest(unittest.TestCase):
 
     def test_methods(self):

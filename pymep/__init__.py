@@ -1,1 +1,1 @@
-name = "pymep
+name = "pymep"
