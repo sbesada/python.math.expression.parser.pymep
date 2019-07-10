@@ -1,9 +1,7 @@
-from __future__ import absolute_import
-
 import math
 from numbers import Complex
 
-from .exception import CalculatorException
+from exception import CalculatorException
 
 class Complex(Complex):    
     
@@ -381,7 +379,7 @@ class Complex(Complex):
     
 
 
-   
+    
 
 
 
