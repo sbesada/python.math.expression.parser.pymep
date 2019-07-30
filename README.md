@@ -47,4 +47,4 @@ Here you can see some examples:
 Enjoy it!!
 
 
-NOTE: Regarding to the OS where you excute the tests, it is possible that some tests fail due to rounding issues. The mathematical library used in this project is "math". In the future, it is possible that the math library change.  
+NOTE: Regarding to the OS where you excute the tests, it is possible that some tests fail due to rounding issues. The mathematical library used in this project is "math". In the future, it is possible that the math library changes.  
