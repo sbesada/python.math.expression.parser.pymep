@@ -1,4 +1,4 @@
-python math expression parser is a python project where you can parse or evaluate math expressions.
+pymep is a python math expression parser where you can parse or evaluate math expressions.
 
 This algorithm does not use a decision tree. It is a recursive algorithm.
 
