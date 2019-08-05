@@ -17,9 +17,13 @@ Here you can see some examples:
 	#Real Expresion parser
 	fx="cos(10)"
 	print(parse(fx))
+	
 	xi=5
 	fx = "1 + x"
 	print(eval(fx, xi))
+	
+	var = {"x":"1+1", "Z":1}
+	eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 	
 
   For complex Numbers:
@@ -37,9 +41,14 @@ Here you can see some examples:
 	#Complex Expresion parser
 	fx="cos(10+2j)"
 	print(parse(fx).__complex__())
+	
 	xi=5
 	fx = "1 +j+x"
 	print(eval(fx, xi).__complex__())
+	
+	var={"x":"1+2j", "Y":complex(2,1)}
+        f_x = "x+j"        
+	eval(f_x,var).__complex__()
 	
     
  There is a full list of examples inside!!
