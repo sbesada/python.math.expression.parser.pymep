@@ -50,4 +50,4 @@ The java version of this library is: https://github.com/sbesada/java.math.expres
 
 NOTE: Regarding to the OS where you excute the tests, it is possible that some tests fail due to rounding issues. The mathematical library used in this project is "math". In the future, it is possible that the math library changes. 
 
-PD: If you think that my work deserves a donation you can do it: https://sbesada.github.io/
+PD: If you think that my work deserves a donation, you can do it: https://sbesada.github.io/
