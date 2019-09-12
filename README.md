@@ -1,6 +1,6 @@
 # python.math.expression.parser.pymep
 
-pymep is a python math expression parser where you can parse or evaluate math expressions.
+pymep can parse or evaluate math expressions.
 
 This algorithm does not use a decision tree. It is a recursive algorithm that is faster than decision trees
 
