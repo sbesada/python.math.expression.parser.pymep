@@ -28,7 +28,7 @@ Here you can see some examples:
 	eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 	
 
-  For complex Numbers:
+  For Complex Numbers:
   
     from pymep.complexParser import parse
 	from pymep.complexParser import eval
