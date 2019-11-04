@@ -4,7 +4,7 @@ pymep can parse or evaluate math expressions.
 
 This algorithm does not use a decision tree. It is a kind of Recursive Ascent Parser (https://en.wikipedia.org/wiki/Recursive_ascent_parser). In fact, it is LR parser (Left-Right Parser) without backtracking. This recursive algorithm is faster than decision trees
 
-## pypi Version
+## pypi version
 
   https://pypi.org/project/pymep/
 
