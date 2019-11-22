@@ -14,7 +14,7 @@ pip install pymep
 
 ## Examples
 
-### Parse or eveluate real Numbers:    
+### Parse or eveluate expressions with real numbers:    
 	
 	from pymep.realParser import parse
 	from pymep.realParser import eval
@@ -32,7 +32,7 @@ pip install pymep
 	eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 	
 
-### Parse or evaluate Complex Numbers:
+### Parse or evaluate expressions with complex numbers:
   
     from pymep.complexParser import parse
 	from pymep.complexParser import eval
