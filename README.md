@@ -14,9 +14,7 @@ pip install pymep
 
 ## Examples
 
-Here you can see some examples:
-
-  Real Numbers:    
+### Parse or eveluate real Numbers:    
 	
 	from pymep.realParser import parse
 	from pymep.realParser import eval
@@ -34,9 +32,9 @@ Here you can see some examples:
 	eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 	
 
-  For Complex Numbers:
+### Parse or evaluate Complex Numbers:
   
-    from pymep.complexParser import parse
+        from pymep.complexParser import parse
 	from pymep.complexParser import eval
 	from pymep.complex import Complex
 
@@ -60,6 +58,16 @@ Here you can see some examples:
 	
     
  There is a full list of examples inside!!
+ 
+ 
+ ## How to execute the tests 
+ 
+	from pymep.realParserTest import functionXTest;
+
+	p = functionXTest();
+
+	p.test_one();
+	p.test_three();
 
 Enjoy it!!
 
