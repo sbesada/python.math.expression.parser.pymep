@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pymep",
-    version="1.0.4",
+    version="1.0.5",
     author="Sergio Besada",
     author_email="sergio.besada@gmail.com",
     description="Python Math Expression Parser",
