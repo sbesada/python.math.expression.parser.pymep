@@ -34,7 +34,7 @@ pip install pymep
 
 ### Parse or evaluate Complex Numbers:
   
-     from pymep.complexParser import parse
+    from pymep.complexParser import parse
 	from pymep.complexParser import eval
 	from pymep.complex import Complex
 
