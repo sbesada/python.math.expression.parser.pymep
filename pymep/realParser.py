@@ -1,4 +1,4 @@
-from exception import CalculatorException
+from .exception import CalculatorException
 import math
 import re
 

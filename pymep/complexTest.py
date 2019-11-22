@@ -1,5 +1,5 @@
 import unittest
-from complex import Complex
+from .complex import Complex
 
 
 class ComplextTest(unittest.TestCase):
