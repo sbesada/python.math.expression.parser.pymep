@@ -1,6 +1,6 @@
 import unittest
-from realParser import eval
-from realParser import parse
+from .realParser import eval
+from .realParser import parse
 
 
 class functionXTest(unittest.TestCase):
