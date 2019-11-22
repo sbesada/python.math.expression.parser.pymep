@@ -1,7 +1,7 @@
 import math
 from numbers import Complex
 
-from exception import CalculatorException
+from .exception import CalculatorException
 
 class Complex(Complex):    
     
