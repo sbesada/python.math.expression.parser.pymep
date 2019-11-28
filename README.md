@@ -1,6 +1,6 @@
 # python.math.expression.parser.pymep
 
-pymep can parse or evaluate math expressions.
+pymep can parse or evaluate math expressions and it is tested using matlab/octave
 
 This algorithm does not use a decision tree. It is a kind of Recursive Ascent Parser (https://en.wikipedia.org/wiki/Recursive_ascent_parser). In fact, it is LR parser (Left-Right Parser) without backtracking. This recursive algorithm is faster than decision trees
 
@@ -11,6 +11,23 @@ This algorithm does not use a decision tree. It is a kind of Recursive Ascent Pa
 ## Installation
 
 pip install pymep
+
+## Features
+
+### math functions
+- sin, cos, tan, sinh, cosh, tanh, asin, acos, atan, log, log10, sqrt
+- pi, e
+
+### custom var
+   var = {"x":"1+1", "Z":1}
+   eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
+
+### parentheses 
+    fx= 2*(e*2)
+
+
+
+
 
 ## Examples
 
