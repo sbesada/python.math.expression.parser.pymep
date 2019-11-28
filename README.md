@@ -18,9 +18,9 @@ pip install pymep
 - sin, cos, tan, sinh, cosh, tanh, asin, acos, atan, log, log10, sqrt
 - pi, e
 
-### custom var
-   var = {"x":"1+1", "Z":1}
-   eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
+### custom vars
+    var = {"x":"1+1", "Z":1}
+    eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 
 ### parentheses 
     fx= 2*(e*2)
