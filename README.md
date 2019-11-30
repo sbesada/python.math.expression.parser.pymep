@@ -19,10 +19,6 @@ pip install pymep
 - pi, e
 - real or complex numbers
 
-### custom variables
-    var = {"x":"1+1", "Z":1}
-    eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
-
 ### parentheses 
     fx= 2*(e*2)
     
