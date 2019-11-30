@@ -17,6 +17,7 @@ pip install pymep
 ### math functions
 - sin, cos, tan, sinh, cosh, tanh, asin, acos, atan, log, log10, sqrt
 - pi, e
+- real or complex numbers
 
 ### custom variables
     var = {"x":"1+1", "Z":1}
@@ -24,6 +25,13 @@ pip install pymep
 
 ### parentheses 
     fx= 2*(e*2)
+    
+### variables 
+
+- Expressions in vars
+
+      var = {"x":"1+2+3+4+5", "Z":1}
+      eval(" 2*(-(((z*3)*sqrt(x^(2)))+3))",var)
 
 
 
