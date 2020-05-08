@@ -90,10 +90,13 @@ pip install pymep
 	p.test_one();
 	p.test_three();
 
-Enjoy it!!
 
-The java version of this library is: https://github.com/sbesada/java.math.expression.parser
+NOTE: The java version of this library is: https://github.com/sbesada/java.math.expression.parser
 
 NOTE: Regarding to the OS where you excute the tests, it is possible that some tests fail beacause of rounding issues. The mathematical library that was used in this project is "math". In the future, it is possible that the math library changes. 
 
-PD: If you think that my work deserves a donation, you can do it: https://sbesada.github.io/
+## Professional Services
+If you are interested in logical parsers or any task related to parsers, you can consult my professional services page https://github.com/sbesada/professional.services        
+
+## Donation
+If you think that my work deserves a donation, you can do it: https://sbesada.github.io/
